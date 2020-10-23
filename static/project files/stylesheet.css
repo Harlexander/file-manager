@@ -1,0 +1,37 @@
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.breadcrumb{
+    background: rgb(26, 23, 26);
+    border-radius: 0;
+}
+.breadcrumb li:hover{
+    color: white;
+}
+
+table{
+    margin: 100px 1px;
+    /* color: rgb(46, 45, 46); */
+    font-weight: bold;
+}
+thead{
+    cursor: pointer;
+}
+a{
+    color: rgb(94, 131, 7);
+    font-weight: bold;
+}
+
+tbody{
+    overflow-y: scroll;
+    display: block;
+    height: 300px;
+}
+
+thead, tbody tr{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
