@@ -5,6 +5,7 @@ const fs = require("fs");
 
 //import files
 const breadcrumb = require('./breadcrumb.js')
+const menuContent = require('./tablecontent');
 
 //get the static folder pathname
 const static = path.join(__dirname, "../static");
@@ -48,10 +49,15 @@ const respond = (req, res) => {
         const pathnameElement = pathname.split("/")
         //get the last element of the array method 1
         const folderName =  pathnameElement.pop();
+
+        const breadcrumbelement = breadcrumb(pathname);
+        const menuContentElement = menuContent(fullStaticPath, pathname);
+
+
+        //replace all export files with html template
         html = html.replace('File Explorer', folderName);
-
-        html = html.replace('pathname', breadcrumb(pathname))
-
+        html = html.replace('pathname', breadcrumbelement)
+        html = html.replace("Helllo world", menuContentElement)
 
 
         res.statusCode = 200
